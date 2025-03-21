@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Text</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .hidden {
+            display: none;
+        }
+        .animated-text {
+            font-size: 3em;
+            color: #ff5733;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+<a href="#" id="showTextLink">Click here to see the magic!</a>
+<div id="textContainer" class="hidden">
+    <div class="animated-text">bhaggggg kaluaaaaa</div>
+</div>
+
+
+<script>
+    document.getElementById('showTextLink').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default link behavior
+        document.getElementById('textContainer').classList.remove('hidden');
+    });
+</script>
+
+
+</body>
+</html>
